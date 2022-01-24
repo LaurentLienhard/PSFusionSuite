@@ -8,7 +8,7 @@ schema: 2.0.0
 # Initialize-FSEnvironment
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+Initialize a new environment for FusionSuite.
 
 ## SYNTAX
 
@@ -17,47 +17,43 @@ Initialize-FSEnvironment [[-DataBase] <String>] [[-Environment] <String>] [<Comm
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+Create a new environment for FusionSuite.
 
 ## EXAMPLES
 
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
+### EXAMPLE 1
 ```
-
-{{ Add example description here }}
+Initialize-FSEnvironment -DataBase "MARIADB" -Environment "DEV"
+```
 
 ## PARAMETERS
 
 ### -DataBase
-{{ Fill DataBase Description }}
+Choose which database to use.
 
 ```yaml
 Type: String
 Parameter Sets: (All)
 Aliases:
-Accepted values: MARIADB, POSTGRESS
 
 Required: False
-Position: 0
-Default value: None
+Position: 1
+Default value: MARIADB
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Environment
-{{ Fill Environment Description }}
+Choose wich environment to use.
 
 ```yaml
 Type: String
 Parameter Sets: (All)
 Aliases:
-Accepted values: PROD, DEV, TEST
 
 Required: False
-Position: 1
-Default value: None
+Position: 2
+Default value: DEV
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -67,11 +63,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### None
-
 ## OUTPUTS
 
-### System.Object
 ## NOTES
+General notes
 
 ## RELATED LINKS
