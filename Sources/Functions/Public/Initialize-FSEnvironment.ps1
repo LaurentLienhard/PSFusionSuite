@@ -13,6 +13,11 @@
 
     begin
     {
+        if (!(Test-Docker))
+        {
+            Write-Error "Docker must be installed"
+            Break
+        }
         Set-Variable -Name DockerFile -Value "$($PSScriptRoot)\ressources\DockerEnv\$DataBase\$Environment"
         Write-Verbose "You're choice is $DataBase in $Environment"
         Write-Verbose "You're configuration files are in $DockerFile"
@@ -29,3 +34,5 @@
 
     }
 }
+
+Initialize-FSEnvironment -verbose
