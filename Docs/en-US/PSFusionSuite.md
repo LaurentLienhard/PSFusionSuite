@@ -8,9 +8,11 @@ Locale: en-US
 
 # PSFusionSuite Module
 ## Description
-{{ Fill in the Description }}
+Module to manage or interact with FusionSuite.
 
 ## PSFusionSuite Cmdlets
 ### [Initialize-FSEnvironment](Initialize-FSEnvironment.md)
-{{ Fill in the Description }}
+This Cmdlet initializes a new environment for FusionSuite.
+
+It's create a docker environment to test FusionSuite.
 
