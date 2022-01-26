@@ -1,18 +1,27 @@
 version: '3.8'
 
 services:
+    frontend:
+      depends_on:
+        - backend
+      build:
+        context: .
+        dockerfile: ./frontend/dockerfile
+      ports:
+        - "8080:80"
+      networks:
+        - test-network
+    
+    backend:
+      build:
+        context: .
+        dockerfile: ./backend/dockerfile
+      ports:
+        - "80:80"
+        - "3306:3306"
+      networks:
+        - test-network
 
-  backend-mariadb:
-    tty: true
-    entrypoint: ./entrypoint.sh
-    image: laurentlienhard/fusionsuite-backend:MARIADB-DEV
-    ports:
-      - "80:80"
-      - "3306:3306"
-
-  frontend:
-    tty: true
-    entrypoint: ./entrypoint.sh
-    image: laurentlienhard/fusionsuite-frontend:MARIADB-DEV
-    ports:
-      - "8080:80"
+networks:
+  test-network:
+    driver: bridge
