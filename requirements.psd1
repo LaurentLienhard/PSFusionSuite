@@ -1,7 +1,7 @@
 @{
     PSDependOptions  = @{
-        Target     = '$PWD/dependencies'
-        AddToPath  = true
+        Target     = '$PWD/Dependencies'
+        AddToPath  = $true
         Parameters = @{
             Force = $True
         }
