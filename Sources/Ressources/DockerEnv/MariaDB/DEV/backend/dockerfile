@@ -1,10 +1,10 @@
 FROM debian:bullseye
 
 RUN apt-get update && apt-get upgrade -y \
-&& apt install php7.4-fpm php7.4-mysql php7.4-xml nginx fcgiwrap composer mariadb-server vim openssh-server openssh-client -y \
-&& mkdir -p /var/www/fusionsuite \
-&& git clone https://github.com/fusionSuite/backend.git  /var/www/fusionsuite/backend \
-&& rm /etc/nginx/sites-enabled/default
+    && apt install php7.4-fpm php7.4-mysql php7.4-xml nginx fcgiwrap composer mariadb-server vim openssh-server openssh-client -y \
+    && mkdir -p /var/www/fusionsuite \
+    && git clone https://github.com/fusionSuite/backend.git  /var/www/fusionsuite/backend \
+    && rm /etc/nginx/sites-enabled/default
 
 RUN service mariadb start
 # Allow SSH Root Login
@@ -17,6 +17,7 @@ COPY ./backend/phinx.php /var/www/fusionsuite/backend
 WORKDIR /var/www/fusionsuite/backend
 COPY ./backend/configure-mariadb.sql .
 COPY ./backend/run.sh .
+#RUN ./bin/cli env:create --name production --type MariaDB --host localhost --username fusionsuite_db --password StrongDBPassword --databasename fusionsuite_db
 RUN chmod +x ./run.sh
 RUN composer install
 CMD [ "/bin/bash", "./run.sh" ]

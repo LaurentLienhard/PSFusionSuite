@@ -7,12 +7,12 @@
  * it under the terms of the GNU Affero General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
  * GNU Affero General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
@@ -24,13 +24,13 @@ return
     ],
     'environments' => [
         'default_migration_table' => 'phinxlog',
-        'default_environment' => 'development',
+        'default_environment' => 'production',
         'production' => [
             'adapter' => 'mysql',
             'host' => 'localhost',
-            'name' => 'fusionsuite',
-            'user' => 'root',
-            'pass' => '',
+            'name' => 'fusionsuite_db',
+            'user' => 'fusionsuite_user',
+            'pass' => 'StrongDBPassword',
             'port' => '3306',
             'charset' => 'utf8',
         ],
