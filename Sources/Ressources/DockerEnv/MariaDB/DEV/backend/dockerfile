@@ -17,7 +17,6 @@ COPY ./backend/phinx.php /var/www/fusionsuite/backend
 WORKDIR /var/www/fusionsuite/backend
 COPY ./backend/configure-mariadb.sql .
 COPY ./backend/run.sh .
-#RUN ./bin/cli env:create --name production --type MariaDB --host localhost --username fusionsuite_db --password StrongDBPassword --databasename fusionsuite_db
 RUN chmod +x ./run.sh
 RUN composer install
 CMD [ "/bin/bash", "./run.sh" ]
