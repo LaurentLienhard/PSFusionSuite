@@ -1,10 +1,9 @@
 #!/bin/bash
 
-service php7.4-fpm start
+service php8.1-fpm start
 service nginx start
 service mariadb start
-mysql -uroot -proot123 < configure-mariadb.sql
-
+mysql -uroot -proot123 <configure-mariadb.sql
 
 ./vendor/bin/phinx migrate
 

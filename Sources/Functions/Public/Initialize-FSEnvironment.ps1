@@ -9,7 +9,7 @@ Create a new environment for FusionSuite.
 Choose which database to use.
 
 .PARAMETER Environment
-Choose wich environment to use.
+Choose which environment to use.
 
 .EXAMPLE
 Initialize-FSEnvironment -DataBase "MARIADB" -Environment "DEV"
@@ -32,7 +32,8 @@ function Initialize-FSEnvironment
 
     begin
     {
-        Set-Variable -Name DockerFile -Value "$($PSScriptRoot)\ressources\DockerEnv\$DataBase\$Environment"
+        #Set-Variable -Name DockerFile -Value "$($PSScriptRoot)\ressources\DockerEnv\$DataBase\$Environment"
+        Set-Variable -Name DockerFile -Value "C:\01-DEV\PSFusionSuite\Sources\Ressources\DockerEnv\MariaDB\DEV"
         Write-Verbose "You're choice is $DataBase in $Environment"
         Write-Verbose "You're configuration files are in $DockerFile"
     }
